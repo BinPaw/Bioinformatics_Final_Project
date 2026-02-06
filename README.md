@@ -131,6 +131,23 @@ Most importantly, the identical pipeline generalized to breast cancer: the optim
 
 Linear SVM was the most consistent classifier, achieving 96.0% CV accuracy on both datasets regardless of cancer type, platform, or classification complexity. Feature selection proved critical: reducing 54,675 genes to 200 via ANOVA improved both accuracy and computational efficiency (270× reduction).
 
+## Individual Contributions
+
+#### Badri — Data Lead
+Loaded and cleaned both datasets (Golub CSV transposition, call column removal, CuMiDa preprocessing). Performed exploratory data analysis including class distributions, expression statistics, and variance analysis. Computed summary statistics and verified data integrity for both phases.
+
+#### Dimitri — Feature Selection Specialist
+Implemented Golub’s Signal-to-Noise Ratio from scratch in Python. Applied ANOVA F-test (SelectKBest) for multi-class feature selection on GSE45827. Compared S2N vs. ANOVA overlap (31/50 genes, 62%). Created feature heatmaps and gene expression boxplots for both datasets.
+
+#### Giorgi — Classifier Group 1
+Trained and evaluated Nearest Centroid, Linear SVM, RBF SVM, and Logistic Regression (L1/L2) on both datasets. Performed Grid Search optimization for SVM and Logistic Regression pipelines. Generated confusion matrices and per-class classification reports.
+
+#### Lasha — Classifier Group 2
+Trained and evaluated Random Forest, KNN (k=3, k=5), and Gradient Boosting on both datasets. Ran stratified 5-fold cross-validation across all classifiers. Extracted Random Forest feature importances and analyzed learning curves.
+
+#### Anano — Visualization & Synthesis
+Performed all PCA analyses (2D and 3D) and unsupervised clustering (hierarchical, K-Means) for both datasets. Created all publication-quality figures across three phases (20+ figures). Designed the presentation, compiled the comparative analysis (Phase 3), and led report assembly.
+
 ## Future Work
 
 1. Application to a third cancer type (e.g., lung cancer) to further validate generalizability
